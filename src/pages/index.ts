@@ -1,0 +1,7 @@
+export { HomePage } from './home';
+export { MyAccountPage } from './my-account';
+export { MySnippetPage } from './my-snippets';
+export { PostSnippetPage } from './post-snippet';
+export { QuestionsPage } from './questions';
+export { UsersPage } from './users';
+export { NoMatchPage } from './no-match-page';
