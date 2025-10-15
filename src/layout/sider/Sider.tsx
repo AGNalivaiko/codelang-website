@@ -11,20 +11,42 @@ import { useState, type FC } from 'react';
 import './sider.css';
 import { UserProfile } from '../../components';
 import { Link } from 'react-router';
-
-const items = [
-  { key: '1', icon: <HomeOutlined />, label: <Link to='/'>Home</Link> },
-  { key: '2', icon: <UserOutlined />, label: <Link to='/my-account'>My Account</Link> },
-  { key: '3', icon: <FileTextOutlined />, label: <Link to='/post-snippet'>Post snippet</Link> },
-  { key: '4', icon: <FileTextOutlined />, label: <Link to='/my-snippets'>My snippets</Link> },
-  { key: '5', icon: <QuestionCircleOutlined />, label: <Link to='/questions'>Questions</Link> },
-  { key: '6', icon: <UsergroupAddOutlined />, label: <Link to='/users'>Users</Link> }
-];
+import { useTranslation } from 'react-i18next';
 
 export const Sider: FC<SiderProps> = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const { t } = useTranslation('sider');
 
   const toggleCollapsed = () => setCollapsed((collapsed) => !collapsed);
+
+  const items = [
+    { key: '1', icon: <HomeOutlined />, label: <Link to='/'>{t('home')}</Link> },
+    {
+      key: '2',
+      icon: <UserOutlined />,
+      label: <Link to='/my-account'>{t('myAccount')}</Link>
+    },
+    {
+      key: '3',
+      icon: <FileTextOutlined />,
+      label: <Link to='/post-snippet'>{t('postSnippet')}</Link>
+    },
+    {
+      key: '4',
+      icon: <FileTextOutlined />,
+      label: <Link to='/my-snippets'>{t('mySnippets')}</Link>
+    },
+    {
+      key: '5',
+      icon: <QuestionCircleOutlined />,
+      label: <Link to='/questions'>{t('questions')}</Link>
+    },
+    {
+      key: '6',
+      icon: <UsergroupAddOutlined />,
+      label: <Link to='/users'>{t('users')}</Link>
+    }
+  ];
 
   return (
     <Layout.Sider className='sider' collapsedWidth={100} collapsed={collapsed}>
