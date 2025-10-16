@@ -1,3 +1,5 @@
+import { QuestionsList } from '../features';
+
 export const QuestionsPage = () => {
-  return <h1>вопросы</h1>;
+  return <QuestionsList />;
 };

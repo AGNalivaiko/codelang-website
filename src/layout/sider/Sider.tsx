@@ -1,4 +1,11 @@
 import { Layout, Menu } from 'antd';
+import type { SiderProps } from './types';
+import { useState, type FC } from 'react';
+import './sider.css';
+import { UserProfile } from '../../components';
+import { Link, useLocation } from 'react-router';
+import { useTranslation } from 'react-i18next';
+import { getCurrentItemOfSider } from '../../utils';
 import {
   HomeOutlined,
   UserOutlined,
@@ -6,16 +13,11 @@ import {
   QuestionCircleOutlined,
   UsergroupAddOutlined
 } from '@ant-design/icons';
-import type { SiderProps } from './types';
-import { useState, type FC } from 'react';
-import './sider.css';
-import { UserProfile } from '../../components';
-import { Link } from 'react-router';
-import { useTranslation } from 'react-i18next';
 
 export const Sider: FC<SiderProps> = () => {
   const [collapsed, setCollapsed] = useState(false);
   const { t } = useTranslation('sider');
+  const location = useLocation();
 
   const toggleCollapsed = () => setCollapsed((collapsed) => !collapsed);
 
@@ -55,6 +57,7 @@ export const Sider: FC<SiderProps> = () => {
         mode='inline'
         theme='dark'
         defaultSelectedKeys={['1']}
+        selectedKeys={getCurrentItemOfSider(location.pathname)}
         items={items}
         style={{ background: '#0958d9' }}
       />

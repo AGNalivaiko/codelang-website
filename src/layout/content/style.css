@@ -1,6 +1,6 @@
 .content {
   text-align: center;
-  min-height: 93vh;
-  color: black;
+  max-height: 100%;
+  overflow-y: auto;
   background-color: white;
 }

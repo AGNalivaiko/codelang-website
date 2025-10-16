@@ -1,3 +1,3 @@
 export const HomePage = () => {
-  return <h1>{`Welcome to Codelang </>`}</h1>;
+  return <h1>{`Welcome to Codelang!</>`}</h1>;
 };
