@@ -1,8 +1,10 @@
 .users-page-container {
   margin: 15px auto;
   max-width: 1000px;
-  height: 1vh;
+  margin-bottom: 2%;
+  text-align: center;
 }
 .container-for-loading {
   margin: 3%;
+  text-align: center;
 }

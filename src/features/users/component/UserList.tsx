@@ -27,7 +27,7 @@ export const UsersList = () => {
       <List
         dataSource={users}
         size='large'
-        pagination={{ position: 'top', align: 'end' }}
+        pagination={{ position: 'bottom', align: 'center' }}
         renderItem={(user) => {
           return (
             <List.Item>

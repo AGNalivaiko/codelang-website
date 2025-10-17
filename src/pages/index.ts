@@ -5,3 +5,5 @@ export { PostSnippetPage } from './post-snippet';
 export { QuestionsPage } from './questions';
 export { UsersPage } from './users';
 export { NoMatchPage } from './no-match-page';
+export { AskQuestionPage } from './ask-question';
+export { RegisterPage } from './register';

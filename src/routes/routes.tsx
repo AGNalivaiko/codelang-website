@@ -8,6 +8,7 @@ import {
   UsersPage,
   NoMatchPage
 } from '../pages';
+import { AskQuestionPage } from '../pages/ask-question';
 
 export const AppRoutes = () => {
   const navigationRoutes = [
@@ -17,6 +18,7 @@ export const AppRoutes = () => {
     { path: '/post-snippet', element: <PostSnippetPage /> },
     { path: '/questions', element: <QuestionsPage /> },
     { path: '/users', element: <UsersPage /> },
+    { path: '/ask-question', element: <AskQuestionPage /> },
     { path: '*', element: <NoMatchPage /> }
   ];
 

@@ -1,6 +1,6 @@
 import type { Question, ApiResponse } from '../types';
 
-const API_URL = 'https://codelang.vercel.app/api/questions';
+const API_URL = 'https://codelang.vercel.app/api/questions?limit=50';
 
 export const fetchQuestions = async (): Promise<Question[]> => {
   try {

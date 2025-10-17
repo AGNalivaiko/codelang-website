@@ -13,6 +13,6 @@ export const getCurrentItemOfSider = (pathname: string) => {
     case '/users':
       return ['6'];
     default:
-      return ['1'];
+      return ['0'];
   }
 };

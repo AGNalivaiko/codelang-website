@@ -1,3 +1,5 @@
+@import '../../styles/variables.css';
+
 .question-card {
   max-height: 100%;
   margin-top: 3%;
@@ -15,10 +17,10 @@
   margin-left: 3%;
 }
 .question-card-meta {
-  color: #8c8c8c;
+  color: var(--basic-lightgrey);
 }
 .question-card-title {
-  color: #8c8c8c !important;
+  color: var(--basic-lightgrey) !important;
 }
 .question-card-header-info {
   padding-top: 3%;
@@ -28,12 +30,12 @@
   padding-top: 3%;
   padding-left: 3%;
   text-align: left;
-  color: #8c8c8c;
+  color: var(--basic-lightgrey);
 }
 .question-card-footer {
   text-align: left;
   padding: 2% 0 3% 3%;
-  color: #1890ff;
+  color: var(--basic-blue);
 }
 .icon-eyes {
   -webkit-transform: scale(1.5);

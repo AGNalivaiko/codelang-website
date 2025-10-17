@@ -4,9 +4,12 @@ import { type FC } from 'react';
 import { TranslationOutlined } from '@ant-design/icons';
 import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router';
+import { Signout_button, AskQuestion_button, ChangeLanguage_button } from '../../components';
 
 export const Header: FC = () => {
   const { i18n } = useTranslation();
+  const location = useLocation();
 
   const handleLanguageChange = () => {
     const newLang = i18n.language == 'ru' ? 'en' : 'ru';
@@ -23,13 +26,12 @@ export const Header: FC = () => {
         </Button>
       </div>
       <div className='header_right_side'>
-        <Button size='middle' style={{ borderRadius: '0px' }}>
-          SIGN OUT
-        </Button>
-        <Button size='middle' type='text' style={{ color: 'white' }} onClick={handleLanguageChange}>
+        {location.pathname == '/questions' && <AskQuestion_button />}
+        <Signout_button />
+        <ChangeLanguage_button onClick={handleLanguageChange}>
           <TranslationOutlined />
           {displayLang}
-        </Button>
+        </ChangeLanguage_button>
       </div>
     </Layout.Header>
   );

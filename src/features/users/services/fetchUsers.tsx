@@ -1,6 +1,6 @@
 import type { User, ApiResponse } from '../types';
 
-const API_URL = 'https://codelang.vercel.app/api/users';
+const API_URL = 'https://codelang.vercel.app/api/users?limit=50';
 
 export const fetchUsers = async (): Promise<User[]> => {
   try {

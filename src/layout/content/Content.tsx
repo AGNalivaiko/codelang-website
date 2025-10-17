@@ -3,7 +3,13 @@ import type { ContentProps } from './types';
 import './style.css';
 import { Layout } from 'antd';
 import { AppRoutes } from '../../routes';
+import { RegisterPage } from '../../pages';
 
 export const Content: FC<ContentProps> = () => {
-  return <Layout.Content className='content'>{<AppRoutes />}</Layout.Content>;
+  return (
+    <Layout.Content className='content'>
+      {/* {<AppRoutes />} */}
+      {<RegisterPage />}
+    </Layout.Content>
+  );
 };

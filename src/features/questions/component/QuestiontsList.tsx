@@ -15,7 +15,16 @@ export const QuestionsList = () => {
     queryFn: fetchQuestions
   });
 
-  if (isLoading) return <>{<Spin size='large' />}</>;
+  if (isLoading)
+    return (
+      <>
+        {
+          <div className='container-for-loading'>
+            <Spin size='large' />
+          </div>
+        }
+      </>
+    );
   if (isError) return <>{error?.message}</>;
 
   return (
@@ -23,8 +32,7 @@ export const QuestionsList = () => {
       <List
         className='question-container'
         dataSource={questions}
-        grid={{ column: '1', gutter: '1' }}
-        pagination={{ position: 'top', align: 'end' }}
+        pagination={{ position: 'bottom', align: 'center' }}
         renderItem={(question) => {
           return <QuestionCard question={question} />;
         }}
