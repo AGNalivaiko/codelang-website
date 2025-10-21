@@ -17,5 +17,3 @@ export const fetchQuestions = async (): Promise<Question[]> => {
     throw error;
   }
 };
-
-fetchQuestions();

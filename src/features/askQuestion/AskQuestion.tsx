@@ -15,7 +15,8 @@ export const AskQuestion = () => {
   const [code, setCode] = useState('');
 
   const mutate = useMutation({
-    mutationFn: postQuestion
+    mutationFn: postQuestion,
+    mutationKey: ['postQuestion']
   });
 
   const handleCodeChange = (value: string) => {

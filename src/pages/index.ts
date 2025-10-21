@@ -7,3 +7,4 @@ export { UsersPage } from './users';
 export { NoMatchPage } from './no-match-page';
 export { AskQuestionPage } from './ask-question';
 export { RegisterPage } from './register';
+export { LogInPage } from './login';

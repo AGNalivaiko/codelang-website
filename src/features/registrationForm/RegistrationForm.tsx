@@ -1,28 +1,54 @@
 import { useMutation } from '@tanstack/react-query';
 import './style.css';
 import type { FormProps } from 'antd';
-import { Button, Checkbox, Form, Input } from 'antd';
+import { Button, Checkbox, Form, Input, message } from 'antd';
 import { postQuestion } from './postRegistration';
-
-type FieldType = {
-  username: string;
-  password: string;
-  confirmPassword: string;
-  remember?: string;
-};
-
-const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {
-  console.log('Failed:', errorInfo);
-};
+import type { FieldType } from './types';
+import { useNavigate, Link } from 'react-router';
+import { useAppDispatch, useAppSelector } from '../../hooks';
+import { setUser } from '../../store/slices/auth';
 
 export const RegistrationForm = () => {
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const authedUser = useAppSelector((state) => state.user.user);
+
+  if (authedUser) {
+    <Button>
+      <Link to='/login'>Войти в профиль</Link>
+    </Button>;
+  }
+
   const mutation = useMutation({
     mutationFn: postQuestion,
-    mutationKey: ['register']
+    mutationKey: ['register'],
+    onSuccess: (data) => {
+      const userData = data?.data;
+      localStorage.setItem('user', JSON.stringify(userData));
+      dispatch(
+        setUser({
+          id: userData.id,
+          username: userData.username,
+          role: userData.role
+        })
+      );
+      message.success('Account was sucessfully registred', 1);
+      navigate('/');
+    },
+    onError: async (error) => {
+      alert('Ошибка регистрации');
+      console.log('Ошибк при регистрации:', error.message);
+    }
   });
 
   const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
-    const { username, password } = values;
+    const { username, password, confirmPassword } = values;
+
+    if (password !== confirmPassword) {
+      alert('Пароли не совпадают');
+      return;
+    }
+
     mutation.mutate({ username, password });
   };
 
@@ -35,7 +61,6 @@ export const RegistrationForm = () => {
       style={{ maxWidth: 600 }}
       initialValues={{ remember: true }}
       onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
       autoComplete='off'
     >
       <Form.Item<FieldType>
