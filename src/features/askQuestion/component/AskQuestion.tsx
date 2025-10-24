@@ -5,7 +5,8 @@ import { javascript } from '@codemirror/lang-javascript';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMutation } from '@tanstack/react-query';
-import { postQuestion } from '../../components/askQuestionForm/postQuestion';
+import { postQuestion } from '../services/postQuestion';
+import './style.css';
 
 export const AskQuestion = () => {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ export const AskQuestion = () => {
     navigate('/questions');
   };
 
-  const handleSumbit = () => {
+  const handleSubmit = () => {
     if (!title || !description) {
       message.warning('Please fill in all fields.');
     }
@@ -68,7 +69,7 @@ export const AskQuestion = () => {
         extensions={[javascript({ jsx: true })]}
         onChange={handleCodeChange}
       />
-      <Button className='ask-question-form-button' onClick={handleSumbit}>
+      <Button className='ask-question-form-button' onClick={handleSubmit}>
         {t('submit')}
       </Button>
     </div>

@@ -1,34 +1,32 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
+import type { User, UserState } from './types';
 
-interface User {
-  id: number;
-  username: string;
-  role: string;
-  password: string;
-}
+const registredUser = localStorage.getItem('user');
+const parsedUser = registredUser ? JSON.parse(registredUser) : null;
 
-interface UserState {
-  user: User | null;
-}
-
-const savedUser = localStorage.getItem('user');
 const initialState: UserState = {
-  user: savedUser ? JSON.parse(savedUser) : null
+  user: parsedUser ? { ...parsedUser, isLoggedIn: true } : null
 };
 
 export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    setUser: (state, action) => {
+    setUser: (state, action: PayloadAction<User>) => {
       state.user = action.payload;
     },
     clearUser: (state) => {
       state.user = null;
+      localStorage.removeItem('user');
+    },
+    logout: (state) => {
+      if (state.user) {
+        state.user.isLoggedIn = false;
+      }
     }
   }
 });
 
-export const { setUser, clearUser } = userSlice.actions;
+export const { setUser, clearUser, logout } = userSlice.actions;
 
 export default userSlice.reducer;

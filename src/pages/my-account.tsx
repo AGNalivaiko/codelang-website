@@ -1,3 +1,5 @@
+import { MyProfile } from '../features';
+
 export const MyAccountPage = () => {
-  return <h1>MyAccountPage</h1>;
+  return <MyProfile />;
 };

@@ -1,10 +1,16 @@
 import { Button } from 'antd';
-import { Link } from 'react-router';
+import { useNavigate } from 'react-router';
 
 export const AskQuestion_button = () => {
+  const navigate = useNavigate();
+
+  const handleOnclick = () => {
+    navigate('/ask-question');
+  };
+
   return (
-    <Button size='middle' style={{ borderRadius: '0px' }}>
-      <Link to='/ask-question'>Ask Question</Link>
+    <Button size='middle' style={{ borderRadius: '0px' }} onClick={handleOnclick}>
+      Ask Question
     </Button>
   );
 };

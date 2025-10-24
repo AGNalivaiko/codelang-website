@@ -9,6 +9,8 @@ export const UserProfile: FC<UserProfileProps> = ({ collapsed, onClick }) => {
   const user = useAppSelector((state) => state.user.user);
   const username = user?.username;
 
+  const isShownName = !collapsed && username;
+
   return (
     <div className='user-profile'>
       <div className='user-avatar'>
@@ -18,7 +20,7 @@ export const UserProfile: FC<UserProfileProps> = ({ collapsed, onClick }) => {
           <Avatar />
         )}
       </div>
-      <div className='user-name'>{username || 'user name'}</div>
+      <div className='user-name'>{isShownName}</div>
       <Button type='text' size='small' style={{ color: 'white' }} onClick={onClick}>
         {collapsed ? <RightOutlined /> : <LeftOutlined />}
       </Button>

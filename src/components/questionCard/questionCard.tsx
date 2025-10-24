@@ -3,8 +3,13 @@ import type { FC } from 'react';
 import type { QuestionCardProps } from './types';
 import { EyeFilled, UserOutlined } from '@ant-design/icons';
 import './style.css';
+import { useState } from 'react';
 
 export const QuestionCard: FC<QuestionCardProps> = ({ question }) => {
+  const [hidden, setHidden] = useState(false);
+
+  if (hidden) return null;
+
   return (
     <div className='question-card'>
       <div className='question-card-header'>
@@ -22,7 +27,7 @@ export const QuestionCard: FC<QuestionCardProps> = ({ question }) => {
         {question.description}
       </Typography.Paragraph>
       <div className='question-card-footer'>
-        <EyeFilled className='icon-eyes' />
+        <EyeFilled className='icon-eyes' onClick={() => setHidden(true)} />
       </div>
     </div>
   );

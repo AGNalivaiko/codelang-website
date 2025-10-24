@@ -1,0 +1,58 @@
+@import '../../styles/variables.css';
+
+.profile-title {
+  margin-top: 1%;
+  text-align: center;
+}
+
+.profile-name {
+  color: var(--basic-blue);
+  font-style: italic;
+}
+
+.profile-container {
+  margin: 0 auto;
+  width: 90%;
+  border: 1px solid #f0f0f0;
+  padding: 1%;
+}
+
+.profile-container-top {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+}
+
+.profile-container-top-avatar {
+  margin-top: 3%;
+}
+
+.profile-container-top-userinfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+
+.profile-container-buttons {
+  display: flex;
+  gap: 3%;
+}
+.profile-container-top-user-name {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.profile-container-top-user-id {
+  color: var(--basic-lightgrey);
+  font-size: 18px;
+}
+.profile-container-top-user-role {
+  color: var(--basic-lightgrey);
+  font-size: 18px;
+}
+.profile-container-bottom {
+  display: flex;
+}

@@ -1,13 +1,12 @@
-const URL_API = 'https://codelang.vercel.app/api/register';
-import type { NewUser } from './types';
+import { URL_POST } from '../../../assets';
+import type { NewUser } from '../types';
 
 export const postQuestion = async (question: NewUser) => {
-  const res = await fetch(URL_API, {
+  const res = await fetch(URL_POST.registration, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
-      'Content-Type': 'application/json',
-      credentials: 'include'
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify(question)
   });

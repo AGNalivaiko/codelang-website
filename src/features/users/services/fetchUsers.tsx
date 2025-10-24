@@ -1,10 +1,9 @@
+import { URL_GET } from '../../../assets';
 import type { User, ApiResponse } from '../types';
-
-const API_URL = 'https://codelang.vercel.app/api/users?limit=50';
 
 export const fetchUsers = async (): Promise<User[]> => {
   try {
-    const response = await fetch(API_URL);
+    const response = await fetch(URL_GET.users);
 
     if (!response.ok) {
       throw new Error(`Error HTTP! Status: ${response.status}`);

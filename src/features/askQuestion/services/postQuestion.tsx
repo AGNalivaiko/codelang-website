@@ -1,4 +1,4 @@
-const API_URL = 'https://codelang.vercel.app/api/questions';
+import { URL_POST } from '../../../assets';
 
 interface NewQuestion {
   title: string;
@@ -7,7 +7,7 @@ interface NewQuestion {
 }
 
 export const postQuestion = async (question: NewQuestion) => {
-  const res = await fetch(API_URL, {
+  const res = await fetch(URL_POST.question, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

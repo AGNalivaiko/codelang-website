@@ -1,13 +1,12 @@
 import type { Question, ApiResponse } from '../types';
-
-const API_URL = 'https://codelang.vercel.app/api/questions?limit=50';
+import { URL_GET } from '../../../assets';
 
 export const fetchQuestions = async (): Promise<Question[]> => {
   try {
-    const res = await fetch(API_URL);
+    const res = await fetch(URL_GET.questions);
 
     if (!res.ok) {
-      throw new Error('jljksjdkf');
+      throw new Error('Не удалось подключиться к серверу');
     }
 
     const data: ApiResponse = await res.json();

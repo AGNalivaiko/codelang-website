@@ -1,3 +1,5 @@
+import { LoginForm } from '../features';
+
 export const LogInPage = () => {
-  return <h1>СТраница входа</h1>;
+  return <LoginForm />;
 };

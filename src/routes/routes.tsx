@@ -7,28 +7,34 @@ import {
   QuestionsPage,
   UsersPage,
   NoMatchPage,
-  LogInPage
+  LogInPage,
+  RegisterPage
 } from '../pages';
 import { AskQuestionPage } from '../pages/ask-question';
+import { useAppSelector } from '../hooks';
+import { GuestRoutes, PrivateRoute } from './routesGuards/TypeOfRoutes';
 
 export const AppRoutes = () => {
-  const navigationRoutes = [
-    { path: '/', element: <HomePage /> },
-    { path: '/my-account', element: <MyAccountPage /> },
-    { path: '/my-snippets', element: <MySnippetPage /> },
-    { path: '/post-snippet', element: <PostSnippetPage /> },
-    { path: '/questions', element: <QuestionsPage /> },
-    { path: '/users', element: <UsersPage /> },
-    { path: '/ask-question', element: <AskQuestionPage /> },
-    { path: '*', element: <NoMatchPage /> },
-    { path: '/login', element: <LogInPage /> }
-  ];
+  const isLoggedIn = useAppSelector((state) => state.user.user?.isLoggedIn ?? false);
 
   return (
     <Routes>
-      {navigationRoutes.map((route) => {
-        return <Route key={route.path} path={route.path} element={route.element} />;
-      })}
+      <Route element={<GuestRoutes isLoggedIn={isLoggedIn} />}>
+        <Route path='/login' element={<LogInPage />} />
+        <Route path='/register' element={<RegisterPage />} />
+      </Route>
+
+      <Route element={<PrivateRoute isLoggedIn={isLoggedIn} />}>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/my-account' element={<MyAccountPage />} />
+        <Route path='/my-snippets' element={<MySnippetPage />} />
+        <Route path='/post-snippet' element={<PostSnippetPage />} />
+        <Route path='/questions' element={<QuestionsPage />} />
+        <Route path='/users' element={<UsersPage />} />
+        <Route path='/ask-question' element={<AskQuestionPage />} />
+      </Route>
+
+      <Route path='*' element={<NoMatchPage />} />
     </Routes>
   );
 };
