@@ -37,6 +37,7 @@ export const LoginForm = () => {
   const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
     if (values) {
       mutation.mutate(values);
+      localStorage.setItem('password', values.password);
     }
   };
 

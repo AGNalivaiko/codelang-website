@@ -18,6 +18,7 @@ export const userSlice = createSlice({
     clearUser: (state) => {
       state.user = null;
       localStorage.removeItem('user');
+      localStorage.removeItem('password');
     },
     logout: (state) => {
       if (state.user) {
