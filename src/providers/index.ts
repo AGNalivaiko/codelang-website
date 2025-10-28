@@ -1,2 +1,3 @@
 export { ReduxProvider } from './ReduxProvider';
-export { QueryClientProviderElement } from './QueryClientProviderElement';
+export { RouterProvider } from './RouterProvider';
+export { TanstackQueryProvider } from './TanstackQueryProvider';
