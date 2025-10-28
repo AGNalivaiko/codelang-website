@@ -3,7 +3,7 @@ import './style.css';
 import { patchUsername } from './pathcUserName';
 import { useMutation } from '@tanstack/react-query';
 import { useAppDispatch } from '../../hooks';
-import { setUser, clearUser } from '../../store/slices/auth';
+import { setUser } from '../../store/slices/auth';
 
 const { Title } = Typography;
 
@@ -26,8 +26,7 @@ export const EditProfileForm = () => {
   };
 
   // Обработчик для смены Пароля
-  const onFinishPassword = (values) => {
-    console.log('Смена пароля:', values);
+  const onFinishPassword = () => {
     // Здесь будет ваша логика мутации
     message.success('Password successfully changed!');
   };
