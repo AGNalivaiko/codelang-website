@@ -1,3 +1,32 @@
 {
-  "cSpell.language": "en,ru"
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "javascript.validate.enable": false,
+  "[javascript]": {
+    "editor.formatOnSave": false,
+    "editor.tabSize": 2,
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false,
+    "editor.tabSize": 2,
+  },
+  "[typescript]": {
+    "editor.formatOnSave": false,
+    "editor.tabSize": 2,
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "scss.validate": false,
+  "css.validate": false,
+  "less.validate": false,
+  "terminal.integrated.scrollback": 100000,
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": true,
+  "files.trimTrailingWhitespace": true
 }
