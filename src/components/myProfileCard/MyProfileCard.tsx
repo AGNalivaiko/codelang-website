@@ -2,7 +2,6 @@ import { Button, Typography, Avatar } from 'antd';
 import { EditOutlined, UserOutlined, DeleteOutlined } from '@ant-design/icons';
 import type { FC } from 'react';
 import type { myProfileCardProps } from './types';
-import './style.css';
 
 export const MyProfileCard: FC<myProfileCardProps> = ({ user, stats, onClick }) => {
   return (

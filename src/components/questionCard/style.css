@@ -1,4 +1,4 @@
-@import '../../styles/variables.css';
+@import '../../app/global.css';
 
 .question-card {
   max-height: 100%;

@@ -1,4 +1,4 @@
-@import '../../styles/variables.css';
+@import '../../app/global.css';
 
 .profile-title {
   margin-top: 1%;

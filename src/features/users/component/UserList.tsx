@@ -1,21 +1,11 @@
-import { fetchUsers } from '../services/fetchUsers';
-import type { User } from '../types';
-import './style.css';
+import '../../../app/global.css';
 import { Avatar, List, Spin } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { useQuery } from '@tanstack/react-query';
+import { useGetUsers } from '../../../api';
 
 export const UsersList = () => {
   const [t] = useTranslation('users');
-  const {
-    data: users,
-    isLoading,
-    isError,
-    error
-  } = useQuery<User[]>({
-    queryKey: ['users'],
-    queryFn: fetchUsers
-  });
+  const { users, isLoading, isError, error } = useGetUsers();
 
   const errorMessage = `${error?.message}`;
 
