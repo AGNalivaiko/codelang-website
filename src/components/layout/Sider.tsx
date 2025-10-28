@@ -9,8 +9,8 @@ import {
   QuestionCircleOutlined,
   UsergroupAddOutlined
 } from '@ant-design/icons';
-import { UserProfile } from '../components';
-import { getCurrentItemOfSider } from '../utils';
+import { UserProfile } from '..';
+import { getCurrentItemOfSider } from '../../utils';
 
 export const Sider: FC = () => {
   const [collapsed, setCollapsed] = useState(false);

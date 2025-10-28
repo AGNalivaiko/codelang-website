@@ -2,7 +2,7 @@ import { Outlet } from 'react-router';
 import { Layout as MainLayout } from 'antd';
 import { Header } from './Header';
 import { Sider } from './Sider';
-import { useCheckAuth } from '../hooks';
+import { useCheckAuth } from '../../hooks';
 
 export const Layout = () => {
   useCheckAuth();

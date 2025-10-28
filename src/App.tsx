@@ -1,15 +1,16 @@
-import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { Router } from './router';
 import './styles/main.css';
-
-const queryClient = new QueryClient();
+import { ReduxProvider } from './providers';
+import { BrowserRouterProvider } from './providers';
 
 export const App = () => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <Router />
-      <ReactQueryDevtools initialIsOpen={false} position='bottom' />
-    </QueryClientProvider>
+    <ReduxProvider>
+      <BrowserRouterProvider>
+        <Router />
+        <ReactQueryDevtools initialIsOpen={false} position='bottom' />
+      </BrowserRouterProvider>
+    </ReduxProvider>
   );
 };

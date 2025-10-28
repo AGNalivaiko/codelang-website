@@ -7,5 +7,6 @@ export const ROUTER_PATHS = {
   POST_SNIPPET: '/post-snippet',
   QUESTIONS: '/questions',
   USERS: '/users',
-  ASK_QUESTION: '/ask-question'
+  ASK_QUESTION: '/ask-question',
+  NO_MATCH_PAGE: '/*'
 };

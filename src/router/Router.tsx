@@ -1,7 +1,7 @@
 import { Suspense, type FC, type PropsWithChildren } from 'react';
 import { Navigate, Outlet, Route, Routes } from 'react-router';
 import { NoMatchPage, LogInPage, RegisterPage } from '../pages';
-import { Layout } from '../layout';
+import { Layout } from '../components/layout';
 import { useCheckAuth } from '../hooks';
 import { ROUTER_PATHS } from '../constants';
 import {
@@ -13,9 +13,10 @@ import {
   LazyUsersPage,
   LazyAskQuestionPage
 } from './dynamic-pages';
+import { Spin } from 'antd';
 
 const SuspenceElement: FC<PropsWithChildren> = ({ children }) => (
-  <Suspense fallback='Loading...'>{children}</Suspense>
+  <Suspense fallback={<Spin fullscreen={true} size='large' />}>{children}</Suspense>
 );
 
 const PrivateRoute: FC = () => {
@@ -55,7 +56,7 @@ export const Router = () => {
           <Route path={ROUTER_PATHS.ASK_QUESTION} element={<LazyAskQuestionPage />} />
         </Route>
 
-        <Route path='*' element={<NoMatchPage />} />
+        <Route path={ROUTER_PATHS.NO_MATCH_PAGE} element={<NoMatchPage />} />
       </Route>
     </Routes>
   );

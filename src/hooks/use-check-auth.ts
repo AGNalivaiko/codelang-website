@@ -6,6 +6,7 @@ export const useCheckAuth = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const isLoggedIn = useAppSelector((state) => state.user.user?.isLoggedIn ?? false);
+
   const authRoutes = [ROUTER_PATHS.LOGIN, ROUTER_PATHS.REGISTER];
   const isAuthRoute = authRoutes.includes(pathname);
 

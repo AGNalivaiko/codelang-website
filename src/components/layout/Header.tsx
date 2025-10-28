@@ -3,8 +3,8 @@ import { Link, useLocation } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { Layout, Button, Row } from 'antd';
 import { TranslationOutlined } from '@ant-design/icons';
-import { AskQuestion_button, ChangeLanguage_button } from '../components';
-import { Logout } from '../features';
+import { AskQuestion_button, ChangeLanguage_button } from '..';
+import { Logout } from '../../features';
 
 const headerRowStyle = {
   display: 'flex',
