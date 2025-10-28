@@ -1,2 +1,2 @@
 export { ReduxProvider } from './ReduxProvider';
-export { BrowserRouterProvider } from './BrowserRouterProvider';
+export { QueryClientProviderElement } from './QueryClientProviderElement';
