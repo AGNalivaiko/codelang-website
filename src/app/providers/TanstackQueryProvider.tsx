@@ -1,7 +1,7 @@
 import { lazy, Suspense, useEffect, useState, type FC, type PropsWithChildren } from 'react';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { queryClient } from '../configs';
+import { queryClient } from '../../configs';
 
 const ReactQueryDevtoolsProduction = lazy(() =>
   import('@tanstack/react-query-devtools/production').then((d) => ({

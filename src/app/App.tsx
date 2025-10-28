@@ -1,7 +1,7 @@
 import { Router } from './router';
 import { ReduxProvider, TanstackQueryProvider, RouterProvider } from './providers';
 
-import './styles/main.css';
+import './global.css';
 
 export const App = () => {
   return (

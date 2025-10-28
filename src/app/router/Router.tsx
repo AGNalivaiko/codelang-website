@@ -1,9 +1,9 @@
 import { Suspense, type FC, type PropsWithChildren } from 'react';
 import { Navigate, Outlet, Route, Routes } from 'react-router';
-import { NoMatchPage, LogInPage, RegisterPage } from '../pages';
-import { Layout } from '../components/layout';
-import { useCheckAuth } from '../hooks';
-import { ROUTER_PATHS } from '../constants';
+import { NoMatchPage, LogInPage, RegisterPage } from '../../pages';
+import { Layout } from '../../components/layout';
+import { useCheckAuth } from '../../hooks';
+import { ROUTER_PATHS } from '../../constants';
 import {
   LazyHomePage,
   LazyMyAccountPage,

@@ -9,7 +9,7 @@ i18n
     lng: 'en',
     ns: ['sider'],
     backend: {
-      loadPath: '/src//locales/{{lng}}/{{ns}}.json'
+      loadPath: '/src/i18n/locales/{{lng}}/{{ns}}.json'
     },
     fallbackLng: 'ru'
   });
