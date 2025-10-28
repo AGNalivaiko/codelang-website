@@ -10,9 +10,9 @@ const ReactQueryDevtoolsProduction = lazy(() =>
 );
 
 export const TanstackQueryProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [showDevtools, setShowDevtools] = useState(true);
-
   const isDevMode = import.meta.env.DEV;
+  const [showDevtools, setShowDevtools] = useState(isDevMode);
+
   const shouldShowDevtools = isDevMode && showDevtools;
   const shouldShowDevtoolsInProduction = !isDevMode && showDevtools;
 
