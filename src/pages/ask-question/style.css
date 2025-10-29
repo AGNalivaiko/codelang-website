@@ -1,0 +1,28 @@
+@import '../../app/global.css';
+
+.ask-question-form-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
+  margin: 1% auto;
+  max-width: 60vw;
+}
+.ask-question-form-title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+  color: var(--basic-lightgrey);
+}
+.ask-question-form-input {
+  width: 100%;
+}
+.ask-question-form-button {
+  border-style: none;
+  display: inline-block;
+}
+
+.ask-question-form-code {
+  text-align: left;
+  color: var(--basic-lightgrey);
+}

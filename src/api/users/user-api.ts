@@ -1,7 +1,7 @@
 import { queryOptions } from '@tanstack/react-query';
 import type { User } from 'types';
 import { apiInstance, type QueryResponse } from '../api-instance';
-import { USERS_QUERY_KEY } from './constants';
+import { USERS_QUERY_KEY } from '../constants';
 
 export const userApi = {
   getUsersQueryOptions: (limit: number = 50) =>

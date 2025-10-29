@@ -1,7 +1,7 @@
 import { Suspense, type FC, type PropsWithChildren } from 'react';
 import { Navigate, Outlet, Route, Routes } from 'react-router';
-import { NoMatchPage, LogInPage, RegisterPage } from '../../pages';
-import { Layout } from '../../components/layout';
+import { NoMatchPage, LogInPage, Registration } from '../../pages';
+import { Layout } from '../../pages/layout';
 import { useCheckAuth } from '../../hooks';
 import { ROUTER_PATHS } from '../../constants';
 import {
@@ -45,7 +45,7 @@ export const Router = () => {
           }
         />
         <Route path={ROUTER_PATHS.LOGIN} element={<LogInPage />} />
-        <Route path={ROUTER_PATHS.REGISTER} element={<RegisterPage />} />
+        <Route path={ROUTER_PATHS.REGISTER} element={<Registration />} />
 
         <Route element={<PrivateRoute />}>
           <Route path={ROUTER_PATHS.ACCOUNT} element={<LazyMyAccountPage />} />
