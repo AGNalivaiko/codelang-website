@@ -1,4 +1,4 @@
-import { URL_POST } from '../../assets';
+import { URL_POST } from '../../services';
 
 interface RegistredUser {
   username: string;

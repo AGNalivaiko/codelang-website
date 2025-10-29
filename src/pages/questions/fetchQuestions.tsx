@@ -1,5 +1,5 @@
 import type { Question, ApiResponse } from './types';
-import { URL_GET } from '../../assets';
+import { URL_GET } from '../../services';
 
 export const fetchQuestions = async (): Promise<Question[]> => {
   try {

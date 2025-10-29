@@ -1,4 +1,4 @@
-import { URL_GET } from '../../assets';
+import { URL_GET } from '../../services';
 import type { User, ApiResponse } from './types';
 
 export const fetchUsers = async (): Promise<User[]> => {
