@@ -19,15 +19,12 @@ export const EditProfileForm = () => {
     }
   });
 
-  // Обработчик для смены Имени
   const onFinishUsername = (value: { username: string }) => {
     const { username } = value;
     mutation.mutate(username);
   };
 
-  // Обработчик для смены Пароля
   const onFinishPassword = () => {
-    // Здесь будет ваша логика мутации
     message.success('Password successfully changed!');
   };
 

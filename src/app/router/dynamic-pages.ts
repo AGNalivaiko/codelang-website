@@ -1,29 +1,29 @@
 import { lazy } from 'react';
 
 export const LazyHomePage = lazy(() =>
-  import('../../pages/home').then((module) => ({ default: module.HomePage }))
+  import('../../pages').then((module) => ({ default: module.HomePage }))
 );
 
 export const LazyMyAccountPage = lazy(() =>
-  import('../../pages/my-account').then((module) => ({ default: module.MyAccountPage }))
+  import('../../pages').then((module) => ({ default: module.Account }))
 );
 
 export const LazyMySnippetPage = lazy(() =>
-  import('../../pages/my-snippets').then((module) => ({ default: module.MySnippetPage }))
+  import('../../pages').then((module) => ({ default: module.Snippets }))
 );
 
 export const LazyPostSnippetPage = lazy(() =>
-  import('../../pages/post-snippet').then((module) => ({ default: module.PostSnippetPage }))
+  import('../../pages').then((module) => ({ default: module.PostSnippets }))
 );
 
 export const LazyQuestionsPage = lazy(() =>
-  import('../../pages/questions').then((module) => ({ default: module.QuestionsPage }))
+  import('../../pages').then((module) => ({ default: module.Questions }))
 );
 
 export const LazyUsersPage = lazy(() =>
-  import('../../pages/users').then((module) => ({ default: module.UsersPage }))
+  import('../../pages').then((module) => ({ default: module.Users }))
 );
 
 export const LazyAskQuestionPage = lazy(() =>
-  import('../../pages/ask-question').then((module) => ({ default: module.AskQuestionPage }))
+  import('../../pages').then((module) => ({ default: module.AskQuestion }))
 );
