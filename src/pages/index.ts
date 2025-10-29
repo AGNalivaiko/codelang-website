@@ -1,6 +1,6 @@
 export { HomePage } from './home';
 export { LogInPage } from './login';
-export { AskQuestion } from './askQuestion';
+export { AskQuestion } from './ask-question';
 export { Account } from './account';
 export { Users } from './users';
 export { Registration } from './registration';
