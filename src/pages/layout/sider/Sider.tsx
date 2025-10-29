@@ -9,9 +9,9 @@ import {
   QuestionCircleOutlined,
   UsergroupAddOutlined
 } from '@ant-design/icons';
-import { UserProfile } from '..';
+import { UserSection } from './UserSection';
 
-export const getCurrentItemOfSider = (pathname: string) => {
+const getCurrentItemOfSider = (pathname: string) => {
   switch (pathname) {
     case '/':
       return ['1'];
@@ -79,7 +79,7 @@ export const Sider: FC = () => {
         maxHeight: '93vh'
       }}
     >
-      <UserProfile collapsed={collapsed} onClick={toggleCollapsed} />
+      <UserSection collapsed={collapsed} onClick={toggleCollapsed} />
       <Menu
         mode='inline'
         theme='dark'

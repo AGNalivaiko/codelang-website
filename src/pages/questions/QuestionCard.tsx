@@ -1,6 +1,6 @@
 import { Avatar, Typography } from 'antd';
 import type { FC } from 'react';
-import type { QuestionCardProps } from './types';
+import type { QuestionCardProps } from './types-question-card';
 import { EyeFilled, UserOutlined } from '@ant-design/icons';
 import './style.css';
 import { useState } from 'react';

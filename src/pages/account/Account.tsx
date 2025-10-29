@@ -1,8 +1,8 @@
 import { useAppSelector } from '../../hooks';
-import { EditProfileForm } from '../../components';
+import { EditAccountForm } from './EditAccountForm';
 import { useAppDispatch } from '../../hooks';
 import { clearUser } from '../../store/slices/auth';
-import { MyProfileCard } from '../../components';
+import { AccountCard } from './AccountCard';
 
 export const Account = () => {
   const dispatch = useAppDispatch();
@@ -24,8 +24,8 @@ export const Account = () => {
 
   return (
     <div style={{ maxWidth: '100%', maxHeight: '100%' }}>
-      <MyProfileCard user={user} onClick={handleDeleteProfile} stats={stats} />
-      <EditProfileForm />
+      <AccountCard user={user} onClick={handleDeleteProfile} stats={stats} />
+      <EditAccountForm />
     </div>
   );
 };

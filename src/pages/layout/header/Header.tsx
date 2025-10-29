@@ -3,8 +3,8 @@ import { Link, useLocation } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { Layout, Button, Row } from 'antd';
 import { TranslationOutlined } from '@ant-design/icons';
-import { AskQuestion_button, ChangeLanguage_button } from '..';
-import { Logout } from '../../features';
+import { Logout } from './Logout';
+import { useNavigate } from 'react-router';
 
 const headerRowStyle = {
   display: 'flex',
@@ -15,10 +15,15 @@ const headerRowStyle = {
 export const Header: FC = () => {
   const { i18n } = useTranslation();
   const location = useLocation();
+  const navigate = useNavigate();
 
   const handleLanguageChange = () => {
     const newLang = i18n.language == 'ru' ? 'en' : 'ru';
     i18n.changeLanguage(newLang);
+  };
+
+  const handleOnclick = () => {
+    navigate('/ask-question');
   };
 
   const displayLang = i18n.language.toUpperCase();
@@ -42,12 +47,16 @@ export const Header: FC = () => {
         </Button>
       </Row>
       <Row style={headerRowStyle}>
-        {location.pathname == '/questions' && <AskQuestion_button />}
+        {location.pathname == '/questions' && (
+          <Button size='middle' style={{ borderRadius: '0px' }} onClick={handleOnclick}>
+            Ask Question
+          </Button>
+        )}
         <Logout />
-        <ChangeLanguage_button onClick={handleLanguageChange}>
+        <Button size='middle' type='text' style={{ color: 'white' }} onClick={handleLanguageChange}>
           <TranslationOutlined />
           {displayLang}
-        </ChangeLanguage_button>
+        </Button>
       </Row>
     </Layout.Header>
   );

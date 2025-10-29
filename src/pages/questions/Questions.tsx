@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { fetchQuestions } from './fetchQuestions';
 import { Spin, List } from 'antd';
-import { QuestionCard } from '../../components';
+import { QuestionCard } from './QuestionCard';
 
 export const Questions = () => {
   const {

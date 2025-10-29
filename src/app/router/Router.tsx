@@ -1,7 +1,7 @@
 import { Suspense, type FC, type PropsWithChildren } from 'react';
 import { Navigate, Outlet, Route, Routes } from 'react-router';
 import { NoMatchPage, LogInPage, Registration } from '../../pages';
-import { Layout } from '../../components/layout';
+import { Layout } from '../../pages/layout';
 import { useCheckAuth } from '../../hooks';
 import { ROUTER_PATHS } from '../../constants';
 import {

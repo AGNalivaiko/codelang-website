@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router';
 import { Layout as MainLayout } from 'antd';
-import { Header } from './Header';
-import { Sider } from './Sider';
+import { Header } from './header';
+import { Sider } from './sider';
 import { useCheckAuth } from '../../hooks';
 
 export const Layout = () => {

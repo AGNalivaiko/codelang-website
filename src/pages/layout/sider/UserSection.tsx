@@ -1,11 +1,16 @@
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import { Avatar, Button } from 'antd';
-import type { UserProfileProps } from './type';
 import type { FC } from 'react';
 import './style.css';
-import { useAppSelector } from '../../hooks';
+import { useAppSelector } from '../../../hooks';
+import type { MouseEventHandler } from 'react';
 
-export const UserProfile: FC<UserProfileProps> = ({ collapsed, onClick }) => {
+export type UserProfileProps = {
+  collapsed: boolean;
+  onClick: MouseEventHandler;
+};
+
+export const UserSection: FC<UserProfileProps> = ({ collapsed, onClick }) => {
   const user = useAppSelector((state) => state.user.user);
   const username = user?.username;
   const isLoggIn = user?.isLoggedIn;

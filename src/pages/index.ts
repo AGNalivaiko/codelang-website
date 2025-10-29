@@ -6,5 +6,5 @@ export { Users } from './users';
 export { Registration } from './registration';
 export { Questions } from './questions';
 export { Snippets } from './snippets';
-export { PostSnippets } from './postSnippets';
-export { NoMatchPage } from './noMatchPage/NoMatchPage';
+export { PostSnippets } from './post-snippets';
+export { NoMatchPage } from './no-match-page/NoMatchPage';

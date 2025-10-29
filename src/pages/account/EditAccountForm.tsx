@@ -1,5 +1,4 @@
 import { Form, Input, Button, Row, Col, Typography, Divider, message } from 'antd';
-import './style.css';
 import { patchUsername } from './pathcUserName';
 import { useMutation } from '@tanstack/react-query';
 import { useAppDispatch } from '../../hooks';
@@ -7,7 +6,7 @@ import { setUser } from '../../store/slices/auth';
 
 const { Title } = Typography;
 
-export const EditProfileForm = () => {
+export const EditAccountForm = () => {
   const dispatch = useAppDispatch();
   const mutation = useMutation({
     mutationFn: patchUsername,
@@ -29,7 +28,15 @@ export const EditProfileForm = () => {
   };
 
   return (
-    <div className='edit-profile-container'>
+    <div
+      style={{
+        maxWidth: '90%',
+        margin: '2% auto 0',
+        padding: '15px',
+        border: '1px solid #f0f0f0',
+        borderRadius: 8
+      }}
+    >
       <Title level={4} style={{ marginBottom: '20px' }}>
         Edit your profile:
       </Title>
@@ -46,7 +53,11 @@ export const EditProfileForm = () => {
               <Input placeholder='New username' />
             </Form.Item>
             <Form.Item>
-              <Button type='primary' htmlType='submit' className='edit-profile-buttons'>
+              <Button
+                type='primary'
+                htmlType='submit'
+                style={{ backgroundColor: '#52c41a', borderColor: '#52c41a', width: '100%' }}
+              >
                 SAVE
               </Button>
             </Form.Item>
