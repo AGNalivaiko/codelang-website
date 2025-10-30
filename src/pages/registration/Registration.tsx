@@ -1,29 +1,14 @@
-import { useMutation } from '@tanstack/react-query';
 import type { FormProps } from 'antd';
-import { Button, Checkbox, Form, Input, message, Spin } from 'antd';
-import { postQuestion } from './postRegistration';
+import { Button, Checkbox, Form, Input, Spin } from 'antd';
 import type { FieldType } from './types';
-import { useNavigate } from 'react-router';
 import { useState } from 'react';
 import { helperForPassword } from './passwordHelper';
+import { useRegistrationUser } from '../../api';
 
 export const Registration = () => {
   const [showPasswordHelp, setShowPasswordHelp] = useState(false);
   const [showUsernameHelp, setShowUsernameHelp] = useState(false);
-  const navigate = useNavigate();
-
-  const mutation = useMutation({
-    mutationFn: postQuestion,
-    mutationKey: ['register'],
-    onSuccess: () => {
-      message.success('Account was successfully registred', 1);
-      navigate('/login');
-    },
-    onError: async (error) => {
-      alert('Ошибка регистрации');
-      console.log('Ошибка при регистрации:', error.message);
-    }
-  });
+  const { mutate, isPending } = useRegistrationUser();
 
   const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
     const { username, password, confirmPassword } = values;
@@ -33,11 +18,11 @@ export const Registration = () => {
       return;
     }
 
-    mutation.mutate({ username, password });
+    mutate({ username, password });
   };
 
   return (
-    <Spin spinning={mutation.isPending}>
+    <Spin spinning={isPending}>
       <Form
         style={{ margin: '15% auto', maxWidth: 600 }}
         name='basic'
