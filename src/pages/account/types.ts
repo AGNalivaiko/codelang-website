@@ -8,7 +8,6 @@ interface User {
 }
 
 export interface myProfileCardProps {
-  stats: string;
   onClick: MouseEventHandler<HTMLButtonElement>;
   user: User | null;
 }
