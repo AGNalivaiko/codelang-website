@@ -1,6 +1,6 @@
 import { Row } from 'antd';
 import { Profile } from './profile';
-import { ManageProfile } from './ManageProfile';
+import { ManageProfile } from './manage-profile';
 import style from './account.module.css';
 
 export const Account = () => (

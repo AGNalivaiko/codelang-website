@@ -2,7 +2,6 @@
 .accountContainer {
   margin: 0 auto;
   width: 90%;
-  border: 1px solid #f0f0f0;
   padding: 1%;
 }
 
@@ -21,7 +20,7 @@
 
 .profileTitle {
   margin-top: 1%;
-  text-align: center;
+  margin: 0 auto;
 }
 
 .profileName {
@@ -35,34 +34,48 @@
   margin-top: 3%;
 }
 
-
-
-/* ManageProfile */
-.profile-container-top-userinfo {
+.profileInfo {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5%;
+  gap: 1%;
 }
 
-.profile-container-buttons {
-  display: flex;
-  gap: 3%;
-}
-.profile-container-top-user-name {
+.profileInfoBold {
   font-weight: bold;
   font-size: 22px;
 }
 
-.profile-container-top-user-id {
+.profileInfoDefault {
   color: var(--basic-lightgrey);
   font-size: 18px;
 }
-.profile-container-top-user-role {
-  color: var(--basic-lightgrey);
-  font-size: 18px;
-}
-/* .profile-container-bottom {
+
+.profileInfoButtonsContainer {
   display: flex;
-} */
+  gap: 3%;
+  width: 70px;
+}
+
+.profileInfoButton {
+  background-color: #f39c12;
+  color: white;
+  border: none;
+}
+
+/* ManageProfile */
+.manageProfileContainer {
+  width: 100%;
+  margin: 2% auto 0;
+  padding: 15px;
+  border: 1px solid #f0f0f0;
+  border-radius: 8;
+  flex-direction: column;
+}
+
+.changeUserNameButton {
+  background-color: #52c41a;
+  border-color: #52c41a;
+  width: 100%;
+}
