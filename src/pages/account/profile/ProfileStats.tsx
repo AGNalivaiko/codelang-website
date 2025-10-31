@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import type { UserStats } from 'store/slices/types';
-import { useAppSelector } from '../../hooks';
+import { useAppSelector } from '../../../hooks';
 
 const generateStatsString = (userStats: UserStats | null) =>
   Object.entries(userStats || {}).reduce((acc, [key, value]) => {

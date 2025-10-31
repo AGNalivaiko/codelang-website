@@ -1,0 +1,68 @@
+/* Account */
+.accountContainer {
+  margin: 0 auto;
+  width: 90%;
+  border: 1px solid #f0f0f0;
+  padding: 1%;
+}
+
+/* Profile */
+.profileDetailsContainer {
+  width: 100%;
+  border: 1px solid #f0f0f0;
+  padding: 1%;
+}
+
+.profileInfoContainer {
+  width: 100%;
+  justify-content: center;
+  gap: 10%;
+}
+
+.profileTitle {
+  margin-top: 1%;
+  text-align: center;
+}
+
+.profileName {
+  color: var(--basic-blue);
+  font-style: italic;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  margin-top: 3%;
+}
+
+
+
+/* ManageProfile */
+.profile-container-top-userinfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+
+.profile-container-buttons {
+  display: flex;
+  gap: 3%;
+}
+.profile-container-top-user-name {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.profile-container-top-user-id {
+  color: var(--basic-lightgrey);
+  font-size: 18px;
+}
+.profile-container-top-user-role {
+  color: var(--basic-lightgrey);
+  font-size: 18px;
+}
+/* .profile-container-bottom {
+  display: flex;
+} */

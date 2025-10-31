@@ -1,16 +1,10 @@
 import { Row } from 'antd';
-import { Profile } from './Profile';
+import { Profile } from './profile';
 import { ManageProfile } from './ManageProfile';
+import style from './account.module.css';
 
 export const Account = () => (
-  <Row
-    style={{
-      width: '100%',
-      flexDirection: 'column',
-      gap: '20px',
-      padding: '0 5%'
-    }}
-  >
+  <Row className={style.accountContainer}>
     <Profile />
     <ManageProfile />
   </Row>
