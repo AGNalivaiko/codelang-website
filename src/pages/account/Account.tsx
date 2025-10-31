@@ -1,5 +1,4 @@
-import { useAppSelector } from '@hooks';
-import { useAppDispatch } from '@hooks';
+import { useAppSelector, useAppDispatch } from '@hooks';
 import { clearUser } from '@store';
 import { AccountCard } from './AccountCard';
 import { EditAccountForm } from './EditAccountForm';

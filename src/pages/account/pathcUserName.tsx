@@ -1,7 +1,5 @@
-import { URL_PATCH } from '../../services';
-
 export const patchUsername = async (newUsername: string) => {
-  const res = await fetch(URL_PATCH.username, {
+  const res = await fetch('https://codelang.vercel.app/api/me', {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json'

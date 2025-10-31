@@ -1,6 +1,6 @@
-import { useAppDispatch } from '@hooks';
 import { useMutation } from '@tanstack/react-query';
 import { Form, Input, Button, Row, Col, Typography, Divider, message } from 'antd';
+import { useAppDispatch } from '@hooks';
 import { setUser } from '@store';
 import { patchUsername } from './pathcUserName';
 

@@ -2,8 +2,7 @@ import { TranslationOutlined } from '@ant-design/icons';
 import { Layout, Button, Row } from 'antd';
 import { type FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link, useLocation } from 'react-router';
-import { useNavigate } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { Logout } from './Logout';
 
 const headerRowStyle = {

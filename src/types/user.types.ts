@@ -7,3 +7,8 @@ export interface CreateUserDto {
   username: string;
   password: string;
 }
+
+export interface RegistredUserDto {
+  username: string;
+  password: string;
+}

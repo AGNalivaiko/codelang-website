@@ -1,10 +1,10 @@
+import { Spin } from 'antd';
+import { Suspense, type FC, type PropsWithChildren } from 'react';
+import { Navigate, Outlet, Route, Routes } from 'react-router';
 import { ROUTER_PATHS } from '@constants';
 import { useCheckAuth } from '@hooks';
 import { Layout } from '@layout';
 import { NoMatchPage, LogInPage, Registration } from '@pages';
-import { Spin } from 'antd';
-import { Suspense, type FC, type PropsWithChildren } from 'react';
-import { Navigate, Outlet, Route, Routes } from 'react-router';
 import {
   LazyHomePage,
   LazyMyAccountPage,

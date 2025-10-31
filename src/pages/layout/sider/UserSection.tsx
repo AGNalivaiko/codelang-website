@@ -3,7 +3,7 @@ import { Avatar, Button } from 'antd';
 import type { FC } from 'react';
 import './style.css';
 import type { MouseEventHandler } from 'react';
-import { useAppSelector } from '../../../hooks';
+import { useAppSelector } from '@hooks';
 
 export type UserProfileProps = {
   collapsed: boolean;
