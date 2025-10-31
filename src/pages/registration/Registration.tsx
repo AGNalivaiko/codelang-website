@@ -1,28 +1,33 @@
+import { useSignUp } from '@api';
 import type { FormProps } from 'antd';
 import { Button, Checkbox, Form, Input, Spin } from 'antd';
-import type { FieldType } from './types';
+import { notification } from 'antd';
 import { useState } from 'react';
 import { helperForPassword } from './passwordHelper';
-import { useRegistrationUser } from '../../api';
+import type { FieldType } from './types';
 
 export const Registration = () => {
   const [showPasswordHelp, setShowPasswordHelp] = useState(false);
   const [showUsernameHelp, setShowUsernameHelp] = useState(false);
-  const { mutate, isPending } = useRegistrationUser();
+  const { signUp, isPending, contextHolder } = useSignUp();
+  const { Item } = Form;
 
   const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
     const { username, password, confirmPassword } = values;
 
     if (password !== confirmPassword) {
-      alert('Пароли не совпадают');
+      notification.info({
+        message: 'Пароли не совпадают'
+      });
       return;
     }
 
-    mutate({ username, password });
+    signUp({ username, password });
   };
 
   return (
     <Spin spinning={isPending}>
+      {contextHolder}
       <Form
         style={{ margin: '15% auto', maxWidth: 600 }}
         name='basic'
@@ -32,23 +37,19 @@ export const Registration = () => {
         onFinish={onFinish}
         autoComplete='off'
       >
-        <Form.Item<FieldType>
+        <Item
           label='Username'
           name='username'
           rules={[{ required: true, message: 'Please input your username!' }]}
-          help={showUsernameHelp && `Имя пользователя должно быть не менее 5 символов`}
+          help={showUsernameHelp && `The user's name must not be shorter than 5 characters.`}
         >
           <Input
-            onFocus={() => {
-              setShowUsernameHelp(true);
-            }}
-            onBlur={() => {
-              setShowUsernameHelp(false);
-            }}
+            onFocus={() => setShowUsernameHelp(true)}
+            onBlur={() => setShowUsernameHelp(false)}
           />
-        </Form.Item>
+        </Item>
 
-        <Form.Item<FieldType>
+        <Item
           label='Password'
           name='password'
           rules={[{ required: true, message: 'Please input your password!' }]}
@@ -58,25 +59,25 @@ export const Registration = () => {
             onFocus={() => setShowPasswordHelp(true)}
             onBlur={() => setShowPasswordHelp(false)}
           />
-        </Form.Item>
+        </Item>
 
-        <Form.Item<FieldType>
+        <Item
           label='Confirm Password'
           name='confirmPassword'
           rules={[{ required: true, message: 'Please input your password!' }]}
         >
           <Input.Password />
-        </Form.Item>
+        </Item>
 
-        <Form.Item<FieldType> name='remember' valuePropName='checked' label={null}>
+        <Item name='remember' valuePropName='checked' label={null}>
           <Checkbox>Remember me</Checkbox>
-        </Form.Item>
+        </Item>
 
-        <Form.Item label={null}>
+        <Item label={null}>
           <Button type='primary' htmlType='submit'>
             Submit
           </Button>
-        </Form.Item>
+        </Item>
       </Form>
     </Spin>
   );

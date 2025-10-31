@@ -1,8 +1,8 @@
-import { useAppSelector } from '../../hooks';
-import { EditAccountForm } from './EditAccountForm';
-import { useAppDispatch } from '../../hooks';
-import { clearUser } from '../../store/slices/auth';
+import { useAppSelector } from '@hooks';
+import { useAppDispatch } from '@hooks';
+import { clearUser } from '@store';
 import { AccountCard } from './AccountCard';
+import { EditAccountForm } from './EditAccountForm';
 
 export const Account = () => {
   const dispatch = useAppDispatch();

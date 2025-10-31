@@ -1,9 +1,9 @@
+import { EyeFilled, UserOutlined } from '@ant-design/icons';
 import { Avatar, Typography } from 'antd';
+import { useState } from 'react';
+import './style.css';
 import type { FC } from 'react';
 import type { QuestionCardProps } from './types-question-card';
-import { EyeFilled, UserOutlined } from '@ant-design/icons';
-import './style.css';
-import { useState } from 'react';
 
 export const QuestionCard: FC<QuestionCardProps> = ({ question }) => {
   const [hidden, setHidden] = useState(false);

@@ -1,7 +1,3 @@
-import { useState, type FC } from 'react';
-import { Link, useLocation } from 'react-router';
-import { useTranslation } from 'react-i18next';
-import { Layout, Menu } from 'antd';
 import {
   HomeOutlined,
   UserOutlined,
@@ -9,6 +5,10 @@ import {
   QuestionCircleOutlined,
   UsergroupAddOutlined
 } from '@ant-design/icons';
+import { Layout, Menu } from 'antd';
+import { useState, type FC } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Link, useLocation } from 'react-router';
 import { UserSection } from './UserSection';
 
 const getCurrentItemOfSider = (pathname: string) => {

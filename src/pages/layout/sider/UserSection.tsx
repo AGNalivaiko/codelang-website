@@ -2,8 +2,8 @@ import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import { Avatar, Button } from 'antd';
 import type { FC } from 'react';
 import './style.css';
-import { useAppSelector } from '../../../hooks';
 import type { MouseEventHandler } from 'react';
+import { useAppSelector } from '../../../hooks';
 
 export type UserProfileProps = {
   collapsed: boolean;

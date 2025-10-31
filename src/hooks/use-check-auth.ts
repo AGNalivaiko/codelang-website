@@ -1,6 +1,6 @@
+import { useLocation, useNavigate } from 'react-router';
 import { ROUTER_PATHS } from '../constants';
 import { useAppSelector } from './reduxHooks';
-import { useLocation, useNavigate } from 'react-router';
 
 export const useCheckAuth = () => {
   const { pathname } = useLocation();

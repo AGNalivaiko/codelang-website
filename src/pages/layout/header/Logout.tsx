@@ -1,7 +1,7 @@
+import { useAppDispatch, useAppSelector } from '@hooks';
 import { Button } from 'antd';
-import { useAppDispatch, useAppSelector } from '../../../hooks';
 import { useNavigate } from 'react-router';
-import { logout } from '../../../store/slices/auth';
+import { logout } from '@store';
 
 export const Logout = () => {
   const dispatch = useAppDispatch();

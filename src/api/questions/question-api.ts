@@ -1,8 +1,8 @@
+import type { Question } from '@custom-types';
 import { queryOptions } from '@tanstack/react-query';
-import { QUESTIONS_QUERY_KEY } from '../constants';
 import { apiInstance } from '../api-instance';
-import type { Question } from '../../types/question.types';
 import type { QueryResponse } from '../api-instance';
+import { QUESTIONS_QUERY_KEY } from '../constants';
 
 export const questionApi = {
   getQuestionsQueryOptions: (limit: number = 50) =>

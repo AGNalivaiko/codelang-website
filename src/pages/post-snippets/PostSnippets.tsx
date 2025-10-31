@@ -1,6 +1,6 @@
-import { useState, type FormEvent } from 'react';
 import { javascript } from '@codemirror/lang-javascript';
 import CodeMirror from '@uiw/react-codemirror';
+import { useState, type FormEvent } from 'react';
 import './style.css';
 
 export const PostSnippets = () => {

@@ -1,6 +1,6 @@
+import { useGetUsers } from '@api';
 import { Avatar, List, Spin } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { useGetUsers } from '../../api';
 
 export const Users = () => {
   const { users, isLoading, isError, error } = useGetUsers();

@@ -3,7 +3,7 @@ export interface User {
   username: string;
   role: string;
 }
-export interface NewUser {
+export interface CreateUserDto {
   username: string;
   password: string;
 }

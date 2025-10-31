@@ -1,5 +1,5 @@
-import { Button, Typography, Avatar } from 'antd';
 import { EditOutlined, UserOutlined, DeleteOutlined } from '@ant-design/icons';
+import { Button, Typography, Avatar } from 'antd';
 import type { FC } from 'react';
 import type { myProfileCardProps } from './types';
 import './profile-card.css';

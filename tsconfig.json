@@ -7,9 +7,20 @@
     "module": "ESNext",
     "types": ["vite/client"],
     "skipLibCheck": true,
-    "baseUrl": "./src",
+    "baseUrl": ".",
 
-    /* Bundler mode */
+    "paths": {
+      "@": ["src"],
+      "@store": ["src/store"],
+      "@constants": ["src/constants"],
+      "@configs": ["src/configs"],
+      "@pages": ["src/pages"],
+      "@layout": ["src/pages/layout"],
+      "@hooks": ["src/hooks"],
+      "@api": ["src/api"],
+      "@custom-types": ["src/types"]
+    },
+
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
@@ -17,7 +28,6 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
-    /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,

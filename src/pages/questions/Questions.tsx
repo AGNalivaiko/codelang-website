@@ -1,6 +1,6 @@
+import { useGetQuestions } from '@api';
 import { Spin, List } from 'antd';
 import { QuestionCard } from './QuestionCard';
-import { useGetQuestions } from '../../api';
 
 export const Questions = () => {
   const { questions, error, isError, isLoading } = useGetQuestions();

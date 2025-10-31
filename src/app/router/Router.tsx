@@ -1,9 +1,10 @@
+import { ROUTER_PATHS } from '@constants';
+import { useCheckAuth } from '@hooks';
+import { Layout } from '@layout';
+import { NoMatchPage, LogInPage, Registration } from '@pages';
+import { Spin } from 'antd';
 import { Suspense, type FC, type PropsWithChildren } from 'react';
 import { Navigate, Outlet, Route, Routes } from 'react-router';
-import { NoMatchPage, LogInPage, Registration } from '../../pages';
-import { Layout } from '../../pages/layout';
-import { useCheckAuth } from '../../hooks';
-import { ROUTER_PATHS } from '../../constants';
 import {
   LazyHomePage,
   LazyMyAccountPage,
@@ -13,7 +14,6 @@ import {
   LazyUsersPage,
   LazyAskQuestionPage
 } from './dynamic-pages';
-import { Spin } from 'antd';
 
 const SuspenceElement: FC<PropsWithChildren> = ({ children }) => (
   <Suspense fallback={<Spin fullscreen={true} size='large' />}>{children}</Suspense>

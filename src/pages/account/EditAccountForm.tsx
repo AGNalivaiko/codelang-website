@@ -1,8 +1,8 @@
-import { Form, Input, Button, Row, Col, Typography, Divider, message } from 'antd';
-import { patchUsername } from './pathcUserName';
+import { useAppDispatch } from '@hooks';
 import { useMutation } from '@tanstack/react-query';
-import { useAppDispatch } from '../../hooks';
-import { setUser } from '../../store/slices/auth';
+import { Form, Input, Button, Row, Col, Typography, Divider, message } from 'antd';
+import { setUser } from '@store';
+import { patchUsername } from './pathcUserName';
 
 const { Title } = Typography;
 

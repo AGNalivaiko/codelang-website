@@ -1,5 +1,5 @@
-import { Router } from './router';
 import { ReduxProvider, TanstackQueryProvider, RouterProvider } from './providers';
+import { Router } from './router';
 
 import './global.css';
 
