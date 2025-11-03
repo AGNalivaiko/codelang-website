@@ -1,6 +1,6 @@
 @import '../../app/global.css';
 
-.ask-question-form-container {
+.askQuestionFormContainer {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -8,21 +8,21 @@
   margin: 1% auto;
   max-width: 60vw;
 }
-.ask-question-form-title {
+.askQuestionFormTitle {
   display: flex;
   justify-content: space-between;
   font-size: 22px;
   color: var(--basic-lightgrey);
 }
-.ask-question-form-input {
+.askQuestionFormInput {
   width: 100%;
 }
-.ask-question-form-button {
+.askQuestionFormButton {
   border-style: none;
   display: inline-block;
 }
 
-.ask-question-form-code {
+.askQuestionFormCode {
   text-align: left;
   color: var(--basic-lightgrey);
 }

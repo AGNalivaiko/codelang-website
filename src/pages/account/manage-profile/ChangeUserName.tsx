@@ -1,28 +1,16 @@
-import { useMutation } from '@tanstack/react-query';
-import { Form, Input, Button, Col, Typography, message } from 'antd';
+import { Form, Input, Button, Col, Typography } from 'antd';
 import { useAppDispatch } from '@hooks';
-import { setUser } from '@store';
 import styles from '../account.module.css';
-import { patchUsername } from '../pathcUserName';
 
 const { Title } = Typography;
 const { Item } = Form;
 
 export const ChangeUserName = () => {
   const dispatch = useAppDispatch();
-  const mutation = useMutation({
-    mutationFn: patchUsername,
-    mutationKey: ['changeUserName'],
-
-    onSuccess: (dataFromServer) => {
-      dispatch(setUser(dataFromServer));
-      message.success('Username successfully changed!');
-    }
-  });
 
   const onFinishUsername = (value: { username: string }) => {
     const { username } = value;
-    mutation.mutate(username);
+    alert('mutation success');
   };
 
   return (

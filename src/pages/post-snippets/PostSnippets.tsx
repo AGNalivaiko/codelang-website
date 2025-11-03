@@ -1,7 +1,5 @@
-import { javascript } from '@codemirror/lang-javascript';
-import CodeMirror from '@uiw/react-codemirror';
-import { useState, type FormEvent } from 'react';
-import './style.css';
+import { useState, type FormEvent, type ChangeEvent } from 'react';
+import { PostSnippetsForm } from './PostSnippetsForm';
 
 export const PostSnippets = () => {
   const [language, setLanguage] = useState('javascript');
@@ -16,44 +14,17 @@ export const PostSnippets = () => {
     console.log('Отправка сниппета:', { language, code });
   };
 
+  const handleChangeLanguage = (e: ChangeEvent<HTMLSelectElement>) => {
+    setLanguage(e.target.value);
+  };
+
   return (
-    <div className='form-wrapper'>
-      <form className='snippet-form' onSubmit={handleSubmit}>
-        <h2 className='form-title'>Create new snippet!</h2>
-        <div className='form-group'>
-          <label htmlFor='language'>Language of your snippet:</label>
-          <select
-            id='language'
-            name='language'
-            className='language-select'
-            value={language}
-            onChange={(e) => setLanguage(e.target.value)}
-          >
-            <option value='javascript'>JavaScript</option>
-            <option value='python'>Python</option>
-            <option value='typescript'>TypeScript</option>
-            <option value='html'>HTML</option>
-            <option value='css'>CSS</option>
-          </select>
-        </div>
-        <div className='form-group'>
-          <label htmlFor='code-editor'>Code of your snippet:</label>
-
-          <CodeMirror
-            id='code-editor'
-            value={code}
-            height='300px'
-            extensions={[javascript({ jsx: true })]}
-            onChange={onCodeChange}
-            className='code-editor'
-            theme='light'
-          />
-        </div>
-
-        <button type='submit' className='submit-button'>
-          CREATE SNIPPET
-        </button>
-      </form>
-    </div>
+    <PostSnippetsForm
+      handleSubmit={handleSubmit}
+      language={language}
+      handleChangeLanguage={handleChangeLanguage}
+      onCodeChange={onCodeChange}
+      code={code}
+    />
   );
 };

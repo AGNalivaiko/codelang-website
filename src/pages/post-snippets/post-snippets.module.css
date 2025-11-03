@@ -1,35 +1,35 @@
-.form-wrapper {
+.formWrapper {
   width: 90%;
   margin: 40px auto;
   padding: 20px;
   background-color: #fff;
 }
 
-.snippet-form {
+.snippetForm {
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
 
-.form-title {
+.formTitle {
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
   margin: 0 0 10px 0;
 }
 
-.form-group {
+.formGroup {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.form-group label {
+.formGroup label {
   font-weight: bold;
   font-size: 1rem;
 }
 
-.language-select {
+.languageSelect {
   font-family: 'Courier New', Courier, monospace;
   font-size: 1rem;
   padding: 12px;
@@ -38,18 +38,18 @@
   background-color: #f9f9f9;
 }
 
-.code-editor .cm-editor {
+.codeEditor :global(.cm-editor) {
   border-radius: 4px;
   border: 1px solid #ccc;
   outline: none;
 }
 
-.code-editor .cm-editor.cm-focused {
+.codeEditor :global(.cm-editor.cm-focused) {
   border-color: #0d6efd;
   box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.2);
 }
 
-.submit-button {
+.submitButton {
   width: 100%;
   padding: 15px;
   background-color: #0d6efd;
@@ -62,6 +62,6 @@
   transition: background-color 0.3s;
 }
 
-.submit-button:hover {
+.submitButton:hover {
   background-color: #0b5ed7;
 }
