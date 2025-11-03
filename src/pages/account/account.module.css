@@ -1,0 +1,81 @@
+/* Account */
+.accountContainer {
+  margin: 0 auto;
+  width: 90%;
+  padding: 1%;
+}
+
+/* Profile */
+.profileDetailsContainer {
+  width: 100%;
+  border: 1px solid #f0f0f0;
+  padding: 1%;
+}
+
+.profileInfoContainer {
+  width: 100%;
+  justify-content: center;
+  gap: 10%;
+}
+
+.profileTitle {
+  margin-top: 1%;
+  margin: 0 auto;
+}
+
+.profileName {
+  color: var(--basic-blue);
+  font-style: italic;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  margin-top: 3%;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1%;
+}
+
+.profileInfoBold {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.profileInfoDefault {
+  color: var(--basic-lightgrey);
+  font-size: 18px;
+}
+
+.profileInfoButtonsContainer {
+  display: flex;
+  gap: 3%;
+  width: 70px;
+}
+
+.profileInfoButton {
+  background-color: #f39c12;
+  color: white;
+  border: none;
+}
+
+/* ManageProfile */
+.manageProfileContainer {
+  width: 100%;
+  margin: 2% auto 0;
+  padding: 15px;
+  border: 1px solid #f0f0f0;
+  border-radius: 8;
+  flex-direction: column;
+}
+
+.changeUserNameButton {
+  background-color: #52c41a;
+  border-color: #52c41a;
+  width: 100%;
+}

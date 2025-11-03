@@ -1,1 +1,1 @@
-export { Account } from './Account';
+export { Profile as Account } from './profile';

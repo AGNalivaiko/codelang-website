@@ -1,7 +1,7 @@
-import { useAppDispatch } from '@hooks';
 import { useMutation } from '@tanstack/react-query';
 import { Button, Checkbox, Flex, Form, Input, message, Spin, type FormProps } from 'antd';
 import { Link, useNavigate } from 'react-router';
+import { useAppDispatch } from '@hooks';
 import { setUser } from '@store';
 import { postLogin } from './postLogin';
 

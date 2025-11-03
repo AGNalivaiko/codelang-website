@@ -1,0 +1,1 @@
+export { ManageProfile } from './ManageProfile';
