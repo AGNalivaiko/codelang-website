@@ -1,6 +1,6 @@
-import { useAppDispatch, useAppSelector } from '@hooks';
 import { Button } from 'antd';
 import { useNavigate } from 'react-router';
+import { useAppDispatch, useAppSelector } from '@hooks';
 import { logout } from '@store';
 
 export const Logout = () => {

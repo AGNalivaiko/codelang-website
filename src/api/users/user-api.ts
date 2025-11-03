@@ -1,5 +1,6 @@
-import type { User, CreateUserDto } from '@custom-types';
 import { mutationOptions, queryOptions } from '@tanstack/react-query';
+import type { User, CreateUserDto, RegistredUserDto } from '@custom-types';
+import type { LoginResponse } from '@custom-types';
 import { apiInstance, type QueryResponse } from '../api-instance';
 import { USERS_QUERY_KEY } from '../constants';
 
@@ -13,5 +14,10 @@ export const userApi = {
   signUp: () =>
     mutationOptions({
       mutationFn: (data: CreateUserDto) => apiInstance('/register', { method: 'POST', json: data })
+    }),
+  logIn: () =>
+    mutationOptions({
+      mutationFn: (data: RegistredUserDto) =>
+        apiInstance<LoginResponse>('/auth/login', { method: 'POST', json: data })
     })
 };

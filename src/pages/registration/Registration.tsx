@@ -1,8 +1,8 @@
-import { useSignUp } from '@api';
 import type { FormProps } from 'antd';
 import { Button, Checkbox, Form, Input, Spin } from 'antd';
 import { notification } from 'antd';
 import { useState } from 'react';
+import { useSignUp } from '@api';
 import { helperForPassword } from './passwordHelper';
 import type { FieldType } from './types';
 

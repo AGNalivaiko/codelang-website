@@ -1,7 +1,7 @@
-import { ROUTER_PATHS } from '@constants';
 import { useMutation } from '@tanstack/react-query';
 import { notification } from 'antd';
 import { useNavigate } from 'react-router';
+import { ROUTER_PATHS } from '@constants';
 import { userApi } from './user-api';
 
 export const useSignUp = () => {

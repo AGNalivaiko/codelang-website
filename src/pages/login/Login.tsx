@@ -1,9 +1,6 @@
-import { useMutation } from '@tanstack/react-query';
-import { Button, Checkbox, Flex, Form, Input, message, Spin, type FormProps } from 'antd';
-import { Link, useNavigate } from 'react-router';
-import { useAppDispatch } from '@hooks';
-import { setUser } from '@store';
-import { postLogin } from './postLogin';
+import { Button, Checkbox, Flex, Form, Input, Spin, type FormProps } from 'antd';
+import { Link } from 'react-router';
+import { useLogIn } from '@api';
 
 export type FieldType = {
   username: string;
@@ -17,38 +14,18 @@ const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {
 };
 
 export const LogInPage = () => {
-  const navigate = useNavigate();
-  const dispatch = useAppDispatch();
-
-  const mutation = useMutation({
-    mutationFn: postLogin,
-    mutationKey: ['login'],
-
-    onSuccess: (data) => {
-      const userData = data?.data;
-      localStorage.setItem('user', JSON.stringify(userData));
-      dispatch(
-        setUser({
-          id: userData.id,
-          username: userData.username,
-          role: userData.role,
-          isLoggedIn: true
-        })
-      );
-      message.success('Вы успешно авторизовались');
-      navigate('/');
-    }
-  });
+  const { login, isPending, contextHolder } = useLogIn();
+  const { Item } = Form;
 
   const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
     if (values) {
-      mutation.mutate(values);
+      login(values);
       localStorage.setItem('password', values.password);
     }
   };
 
   return (
-    <Spin spinning={mutation.isPending}>
+    <Spin spinning={isPending}>
       <Flex justify='center'>
         <Form
           name='basic'
@@ -60,39 +37,40 @@ export const LogInPage = () => {
           onFinishFailed={onFinishFailed}
           autoComplete='off'
         >
-          <Form.Item<FieldType>
+          <Item
             label='Username'
             name='username'
             rules={[{ required: true, message: 'Please input your username!' }]}
           >
             <Input />
-          </Form.Item>
+          </Item>
 
-          <Form.Item<FieldType>
+          <Item
             label='Password'
             name='password'
             rules={[{ required: true, message: 'Please input your password!' }]}
           >
             <Input.Password />
-          </Form.Item>
+          </Item>
 
-          <Form.Item<FieldType> name='remember' valuePropName='checked' label={null}>
+          <Item name='remember' valuePropName='checked' label={null}>
             <Checkbox>Remember me</Checkbox>
-          </Form.Item>
+          </Item>
 
-          <Form.Item label={null}>
+          <Item label={null}>
             <Button type='primary' htmlType='submit'>
               Submit
             </Button>
-          </Form.Item>
+          </Item>
 
-          <Form.Item label={'No profile?'} style={{ display: 'flex' }}>
+          <Item label={'No profile?'} style={{ display: 'flex' }}>
             <Button type='text' htmlType='submit' style={{ marginRight: 20 }}>
               <Link to='/register'>Registration</Link>
             </Button>
-          </Form.Item>
+          </Item>
         </Form>
       </Flex>
+      {contextHolder}
     </Spin>
   );
 };
